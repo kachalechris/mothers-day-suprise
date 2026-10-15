@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 const websiteFolder = path.join(
   __dirname,
-  "Mother's day suprise"
+  "mothers-day-suprise"
 );
 
 app.use(express.static(websiteFolder));
