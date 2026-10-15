@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>A Happy Surprise | By Chris</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./index_files/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="navbar">
+            <!-- Brand Logo -->
+            <a href="#home" class="nav-brand">
+                <span class="brand-icon"><i class="fa-solid fa-code"></i></span>
+                <span class="brand-name">A Mothers day Suprise by<span>Chris</span></span>
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="nav-menu">
+                <a href="#home" class="navLinks active">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+            </div>
+        </div>
+    </div>
+
+  <main class="room" id="room">
+    <div class="room-light" id="roomLight"></div>
+    <div class="fireflies" id="fireflies"></div>
+
+    <!-- LAMP -->
+    <section class="lamp-side">
+      <div class="lamp-container" id="lampContainer">
+        <div class="lamp-glow"></div>
+        <div class="lamp-head"></div>
+        <div class="light-beam"></div>
+        <div class="lamp-stem"></div>
+        <div class="lamp-base"></div>
+        <div class="desk-surface"></div>
+
+        <svg class="string-svg" aria-hidden="true">
+          <path id="stringPath" d="M 0 0 L 0 80"></path>
+        </svg>
+
+        <div
+          class="string-handle"
+          id="stringHandle"
+          aria-label="Pull lamp string"
+          style="transform: translate(0px, 0px);"
+        ></div>
+      </div>
+    </section>
+
+    <!-- MOTHER'S DAY CARD -->
+    <section class="login-side">
+      <div class="glass login-card" id="mainCard">
+        <div class="glass-line"></div>
+
+        <!-- This inner container makes the 3D flip possible -->
+        <div class="card-inner" id="cardInner">
+
+          <!-- FRONT -->
+          <div class="card-face front-face" id="frontCard">
+            <div class="Mothers-Day-Card">
+              <h2>Happy Mother's Day</h2>
+
+              <p>
+                To the most caring person in the world.
+                I hope you have a great day!
+              </p>
+
+              <div class="card-photo">
+                <img src="my-mom.jpg" alt="Mom">
+              </div>
+            </div>
+
+            <button
+              class="sign-in"
+              type="button"
+              onclick="toggleCard()"
+            >
+              More....
+            </button>
+          </div>
+
+          <!-- BACK -->
+          <div class="card-face back-face" id="backCard">
+            <div class="Mothers-Day-Card">
+              <h2>You Mean Everything</h2>
+
+              <p>
+                Thank you for always being my guiding light
+                and for everything you do for me.
+                I love you so much!
+              </p>
+
+              <div class="card-photo">
+                <img src="my-mom-2.jpg" alt="Memory">
+              </div>
+            </div>
+
+            <button
+              class="sign-in"
+              type="button"
+              onclick="toggleCard()"
+            >
+              Back
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- JavaScript -->
+  <script src="./index_files/script.js"></script>
+</body>
+</html>

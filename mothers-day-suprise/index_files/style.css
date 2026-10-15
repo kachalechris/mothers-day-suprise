@@ -1,0 +1,1039 @@
+
+/* ==========================================
+   A HAPPY SURPRISE | BY CHRIS
+   Complete Mother's Day stylesheet
+========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Outfit', sans-serif;
+  color: #fff;
+  background: #030306;
+  --bg-main: #181920;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #2a2d3a 0%, #131419 100%);
+
+  /* orange accent theme */
+  --orange-primary: #ff6b35;
+  --orange-hover: #ff8254;
+  --orange-glow: rgba(255, 107, 53, 0.4);
+
+  /* Glassmorphism details */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.12);
+
+  /* Text Colors */
+  --text-white: #ffffff;
+  --text-muted: #a1a1a1;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  background: #030306;
+  background: var(--bg-main);
+  background-image: var(--bg-gradient);
+  min-height: 100vh;
+  color: var(--text-white);
+  position: relative;
+}
+
+.header{
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 0 24px;
+}
+
+.navbar{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 100px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Brand Logo Style */
+.nav-brand{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-white);
+    font-weight: 800;
+    font-size: 1.15rem;
+}
+
+.brand-icon{
+    width: 36px;
+    height: 36px;
+    background: var(--orange-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 12px var(--orange-glow);
+}
+
+.brand-name span{
+    color: var(--orange-primary);
+}
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navLinks{
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.6rem 1.1rem;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navLinks i{
+    font-size: 0.85rem;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+/* Link Hover & Active state */
+
+.navLinks:hover,
+.navLinks.active{
+    color: var(--text-white);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.navLinks:hover i,
+.navLinks.active i{
+    opacity: 1;
+    color: var(--orange-primary);
+}
+
+.navLinks:hover{
+    transform: translateY(-2px);
+}
+
+/* call to action button */
+.nav-cta{
+    text-decoration: none;
+    padding: 0.6rem 1.4rem;
+    background: var(--orange-primary);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px var(--orange-glow);
+    transition: all 0.3s ease;
+}
+
+.nav-cta:hover{
+    background: var(--orange-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--orange-glow);
+}
+
+
+button,
+input {
+  font: inherit;
+}
+
+/* ==========================================
+   ROOM
+========================================== */
+
+.room {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 35px;
+  padding: 35px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 100%,
+      rgba(48, 35, 65, 0.12),
+      transparent 55%
+    ),
+    #030306;
+
+  transition: background 1s ease;
+  isolation: isolate;
+}
+
+.room.on {
+  background:
+    radial-gradient(
+      ellipse at 30% 45%,
+      rgba(255, 184, 92, 0.10),
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 72% 55%,
+      rgba(255, 105, 180, 0.08),
+      transparent 50%
+    ),
+    #08070b;
+}
+
+/* ==========================================
+   AMBIENT LIGHT
+========================================== */
+
+.room-light {
+  position: absolute;
+  width: 850px;
+  height: 850px;
+  left: -250px;
+  top: -200px;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 210, 120, 0.19),
+    rgba(255, 190, 90, 0.06) 35%,
+    transparent 70%
+  );
+
+  opacity: 0;
+  transform: scale(0.7);
+  transition:
+    opacity 1.2s ease,
+    transform 1.5s ease;
+}
+
+.room.on .room-light {
+  opacity: 1;
+  transform: scale(1.35);
+}
+
+/* ==========================================
+   FIREFLIES
+========================================== */
+
+.fireflies {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.firefly {
+  position: absolute;
+  border-radius: 50%;
+  background: #ffdf8b;
+
+  box-shadow:
+    0 0 7px 2px rgba(255, 222, 139, 0.8),
+    0 0 20px rgba(255, 173, 72, 0.5);
+
+  animation:
+    fireflyMove var(--duration, 15s)
+    ease-in-out var(--delay, 0s) infinite alternate;
+}
+
+@keyframes fireflyMove {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.25;
+  }
+
+  50% {
+    transform: translate(var(--x3, 40px), var(--y3, -40px));
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(var(--x5, -30px), var(--y5, 30px));
+    opacity: 0.4;
+  }
+}
+
+/* ==========================================
+   LEFT SIDE: LAMP
+========================================== */
+
+.lamp-side {
+  position: relative;
+  z-index: 6;
+  flex: 1 1 50%;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lamp-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(1.1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lamp-head {
+  position: relative;
+  z-index: 6;
+  width: 145px;
+  height: 53px;
+
+  background: linear-gradient(
+    180deg,
+    #242326,
+    #111113 75%
+  );
+
+  border-radius: 140px 140px 5px 5px;
+  border-bottom: 2px solid #050505;
+
+  box-shadow:
+    inset 0 2px 6px rgba(255, 255, 255, 0.12),
+    0 10px 25px rgba(0, 0, 0, 0.75);
+
+  transition: box-shadow 0.5s ease;
+}
+
+.room.on .lamp-head {
+  box-shadow:
+    inset 0 -3px 12px rgba(255, 224, 157, 0.5),
+    0 0 25px rgba(255, 206, 117, 0.18);
+}
+
+.lamp-glow {
+  position: absolute;
+  top: 40px;
+  z-index: 5;
+  width: 90px;
+  height: 22px;
+
+  background: #fff7df;
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 30px 15px rgba(255, 231, 167, 0.7),
+    0 0 75px 40px rgba(255, 194, 94, 0.35);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.room.on .lamp-glow {
+  opacity: 1;
+}
+
+.light-beam {
+  position: absolute;
+  top: 45px;
+  z-index: 3;
+  width: 470px;
+  height: 360px;
+
+  clip-path: polygon(40% 0, 60% 0, 100% 100%, 0 100%);
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 224, 145, 0.38),
+    rgba(255, 198, 99, 0.12) 55%,
+    transparent
+  );
+
+  opacity: 0;
+  filter: blur(9px);
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+.room.on .light-beam {
+  opacity: 1;
+}
+
+.lamp-stem {
+  position: relative;
+  z-index: 4;
+  width: 6px;
+  height: 290px;
+
+  background: linear-gradient(
+    to right,
+    #09090a,
+    #303033,
+    #09090a
+  );
+
+  transition: box-shadow 0.5s ease;
+}
+
+.room.on .lamp-stem {
+  box-shadow: 0 0 14px rgba(255, 199, 103, 0.2);
+}
+
+.lamp-base {
+  position: relative;
+  z-index: 5;
+  width: 105px;
+  height: 17px;
+
+  background: linear-gradient(
+    180deg,
+    #272629,
+    #101012
+  );
+
+  border-radius: 35px 35px 5px 5px;
+
+  box-shadow:
+    inset 0 2px 5px rgba(255, 255, 255, 0.12),
+    0 10px 22px rgba(0, 0, 0, 0.8);
+}
+
+.desk-surface {
+  position: absolute;
+  bottom: -45px;
+  z-index: 1;
+  width: 500px;
+  height: 110px;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 207, 117, 0.23),
+    rgba(255, 179, 68, 0.06) 50%,
+    transparent 72%
+  );
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+.room.on .desk-surface {
+  opacity: 1;
+}
+
+/* Lamp pull string */
+
+.string-svg {
+  position: absolute;
+  top: 45px;
+  left: calc(50% + 55px);
+  width: 2px;
+  height: 2px;
+  overflow: visible;
+  z-index: 7;
+  pointer-events: none;
+}
+
+.string-svg path {
+  fill: none;
+  stroke: #786b49;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.string-handle {
+  position: absolute;
+  top: 125px;
+  left: calc(50% + 49px);
+  z-index: 8;
+
+  width: 11px;
+  height: 22px;
+  border-radius: 6px;
+
+  background: linear-gradient(
+    90deg,
+    #b38a37,
+    #ffeb9b,
+    #b58c3a
+  );
+
+  box-shadow:
+    0 0 8px rgba(255, 222, 142, 0.2),
+    inset 0 2px 3px rgba(255, 255, 255, 0.65);
+
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.string-handle.dragging {
+  cursor: grabbing;
+  transition: none;
+}
+
+/* ==========================================
+   RIGHT SIDE: HIDDEN SURPRISE
+========================================== */
+
+.login-side {
+  position: relative;
+  z-index: 10;
+
+  flex: 0 1 470px;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateX(35px) translateY(20px) scale(0.96);
+
+  transition:
+    opacity 1s ease,
+    visibility 1s ease,
+    transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.room.on .login-side {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateX(-25px) translateY(0) scale(1);
+}
+
+/* ==========================================
+   MAIN GLASS CARD
+========================================== */
+
+section.login-side .glass.login-card {
+  position: relative;
+  isolation: isolate;
+
+  width: 440px;
+  height: 590px;
+  max-width: 100%;
+
+  padding: 0;
+  border-radius: 28px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.13),
+    rgba(255, 255, 255, 0.045) 45%,
+    rgba(255, 207, 154, 0.07)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.48),
+    inset 0 1px 1px rgba(255, 255, 255, 0.18);
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  /* Allows the hearts to orbit OUTSIDE the card. */
+  overflow: visible;
+
+  transition:
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+/* Glass highlight */
+
+.glass-line {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  z-index: 4;
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.65),
+    transparent
+  );
+}
+
+/* Warm glowing card */
+
+.room.on .login-card {
+  animation: romanticCardGlow 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes romanticCardGlow {
+  from {
+    border-color: rgba(255, 190, 220, 0.3);
+
+    box-shadow:
+      0 0 22px rgba(255, 105, 180, 0.12),
+      0 0 40px rgba(255, 210, 135, 0.08),
+      0 25px 80px rgba(0, 0, 0, 0.45),
+      inset 0 1px 1px rgba(255, 255, 255, 0.16);
+  }
+
+  to {
+    border-color: rgba(255, 215, 233, 0.65);
+
+    box-shadow:
+      0 0 35px rgba(255, 105, 180, 0.3),
+      0 0 65px rgba(255, 210, 135, 0.17),
+      0 25px 80px rgba(0, 0, 0, 0.45),
+      inset 0 0 25px rgba(255, 180, 215, 0.06);
+  }
+}
+
+/* ==========================================
+   FRONT AND BACK CARD CONTENT
+   Works with the current HTML structure.
+========================================== */
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 16px;
+
+  overflow: hidden;
+  border-radius: inherit;
+  box-sizing: border-box;
+}
+
+/* Keep the hidden side truly hidden. */
+
+#backCard[style*="display: none"] {
+  display: none !important;
+}
+
+/* ==========================================
+   FROSTED INNER MESSAGE PANEL
+========================================== */
+
+.Mothers-Day-Card {
+  position: relative;
+  width: 100%;
+  padding: 25px 20px 20px;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 10px 30px rgba(0, 0, 0, 0.13);
+
+  text-align: center;
+}
+
+/* Heading */
+
+.Mothers-Day-Card h2 {
+  margin: 0 0 14px;
+
+  color: #fff0d5;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.2px;
+
+  text-shadow:
+    0 0 18px rgba(255, 209, 143, 0.15);
+}
+
+/* Message */
+
+.Mothers-Day-Card p {
+  margin: 0 0 14px;
+
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.75;
+
+  overflow-wrap: anywhere;
+}
+
+/* ==========================================
+   IMAGE FRAME
+========================================== */
+
+.card-photo {
+  position: relative;
+  width: 100%;
+
+  height: 235px;
+  min-height: 235px;
+  max-height: 235px;
+  flex: 0 0 235px;
+
+  margin-top: 15px;
+  overflow: hidden;
+
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  background: rgba(0, 0, 0, 0.24);
+
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.23),
+    0 0 18px rgba(255, 210, 150, 0.04);
+}
+
+/* The photograph never exceeds its frame. */
+
+.card-photo img {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+
+  border-radius: inherit;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.card-face .sign-in {
+  position: relative;
+  z-index: 5;
+  align-self: center;
+  flex-shrink: 0;
+
+  min-width: 160px;
+  padding: 14px 25px;
+
+  color: #281a0a;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+
+  background: linear-gradient(
+    135deg,
+    #fff0cb,
+    #e0bc7d 55%,
+    #c69a53
+  );
+
+  border: 1px solid rgba(255, 235, 188, 0.75);
+  border-radius: 50px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(205, 158, 83, 0.19),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.card-face .sign-in:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.07);
+
+  box-shadow:
+    0 10px 30px rgba(255, 193, 100, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.card-face .sign-in:active {
+  transform: scale(0.97);
+}
+
+/* ==========================================
+   FLOATING HEARTS
+========================================== */
+
+.heart-orbit {
+  position: absolute;
+  inset: -48px;
+
+  overflow: visible;
+  pointer-events: none;
+  z-index: 20;
+
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.room.on .heart-orbit {
+  opacity: 1;
+}
+
+.floating-heart {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  display: block;
+  line-height: 1;
+
+  color: #ff85bb;
+  font-size: var(--heart-size, 20px);
+
+  filter:
+    drop-shadow(0 0 5px rgba(255, 105, 180, 0.95))
+    drop-shadow(0 0 13px rgba(255, 65, 160, 0.55));
+
+  transform-origin: center;
+
+  animation:
+    heartOrbit var(--heart-duration, 8s)
+    linear var(--heart-delay, 0s) infinite;
+
+  will-change: transform, opacity;
+}
+
+.floating-heart.gold {
+  color: #ffe3a1;
+
+  filter:
+    drop-shadow(0 0 5px rgba(255, 222, 145, 1))
+    drop-shadow(0 0 13px rgba(255, 177, 68, 0.65));
+}
+
+@keyframes heartOrbit {
+  0% {
+    transform:
+      rotate(0deg)
+      translateX(var(--heart-radius, 175px))
+      rotate(0deg)
+      scale(0.65);
+    opacity: 0.2;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  50% {
+    transform:
+      rotate(180deg)
+      translateX(var(--heart-radius, 175px))
+      rotate(-180deg)
+      scale(1.1);
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      rotate(360deg)
+      translateX(var(--heart-radius, 175px))
+      rotate(-360deg)
+      scale(0.65);
+    opacity: 0.2;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE LAYOUT
+========================================== */
+
+@media (max-width: 1000px) {
+  .room {
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .lamp-container {
+    transform: scale(0.9);
+  }
+
+  .login-side {
+    flex-basis: 420px;
+  }
+
+  section.login-side .glass.login-card {
+    width: 400px;
+    height: 560px;
+  }
+
+  .room.on .login-side {
+    transform: translateX(-10px) translateY(0) scale(1);
+  }
+
+  .card-face {
+    padding: 24px;
+  }
+
+  .card-photo {
+    height: 215px;
+    min-height: 215px;
+    max-height: 215px;
+    flex-basis: 215px;
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    overflow: auto;
+  }
+
+  .room {
+    min-height: 100vh;
+    height: auto;
+
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+
+    padding: 35px 16px;
+    overflow: hidden;
+  }
+
+  .lamp-side {
+    flex: 0 0 auto;
+    height: 330px;
+    width: 100%;
+  }
+
+  .lamp-container {
+    transform: scale(0.65);
+  }
+
+  .login-side {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .room.on .login-side {
+    transform: translateY(0) scale(1);
+  }
+
+  section.login-side .glass.login-card {
+    width: 100%;
+    height: 560px;
+    max-width: 440px;
+  }
+
+  .card-face {
+    padding: 22px;
+  }
+
+  .Mothers-Day-Card {
+    padding: 20px 16px;
+  }
+
+  .Mothers-Day-Card h2 {
+    font-size: 25px;
+  }
+
+  .card-photo {
+    height: 215px;
+    min-height: 215px;
+    max-height: 215px;
+    flex-basis: 215px;
+  }
+
+  .heart-orbit {
+    inset: -24px;
+  }
+}
+
+@media (max-width: 380px) {
+  section.login-side .glass.login-card {
+    height: 535px;
+  }
+
+  .card-face {
+    padding: 15px;
+  }
+
+  .Mothers-Day-Card {
+    padding: 17px 13px;
+  }
+
+  .Mothers-Day-Card h2 {
+    font-size: 22px;
+  }
+
+  .Mothers-Day-Card p {
+    font-size: 13px;
+  }
+
+  .card-photo {
+    height: 185px;
+    min-height: 185px;
+    max-height: 185px;
+    flex-basis: 185px;
+  }
+
+  .card-face .sign-in {
+    min-width: 145px;
+    padding: 12px 20px;
+  }
+}
+
+/* Respect reduced-motion preferences. */
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-heart,
+  .firefly,
+  .room.on .login-card {
+    animation-duration: 15s;
+  }
+}
